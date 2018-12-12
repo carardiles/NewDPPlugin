@@ -1,32 +1,23 @@
-<?xml version='1.0' encoding='utf-8'?>
-<plugin id="cl-entel-plugins-NewDPPlugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cl.entel.plugins.NewDPPlugin" version="0.2.3">
+    <name>NewDPPlugin</name>
+    <description>Cordova New DigitalPersona Plugin</description>
+    <keywords>cordova,DigitalPersona</keywords>
+    <repo>https://github.com/cardiles/cordova-newdpplugin.git</repo>
 
-  <name>NewDPPlugin</name>
+    <js-module src="www/NewDPPlugin.js" name="NewDPPlugin">
+        <clobbers target="cl.entel.plugins.NewDPPlugin" />
+    </js-module>
 
-  <js-module name="NewDPPlugin" src="www/NewDPPlugin.js">
-    <clobbers target="NewDPPlugin" />
-  </js-module>
+     <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NewDPPlugin" >
+                <param name="android-package" value="cl.entel.plugins.NewDPPlugin.NewDPPlugin"/>
+            </feature>
+        </config-file>
 
-  <platform name="android">
+        <source-file src="src/android/NewDPPlugin.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
+    </platform>
 
-    <config-file target="config.xml" parent="/*">
-      <feature name="NewDPPlugin">
-        <param name="android-package" value="cl.entel.plugins.NewDPPlugin.NewDPPlugin"/>
-      </feature>
-    </config-file>
-
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
-        <activity android:label="New DP Activity" android:name="cl.entel.plugins.NewDPPlugin.NewDPActivity"></activity>
-    </config-file>
-
-    <source-file src="src/android/NewDPPlugin.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
-    <source-file src="src/android/NewDPActivity.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
-    <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
-
-
-    <framework src="src/android/file.gradle" custom="true" type="gradleReference" />
-    
-    <resource-file src="libs/dpuareu.jar" target="libs/dpuareu.jar"/>
-  
-  </platform>
 </plugin>
