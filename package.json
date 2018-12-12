@@ -1,0 +1,52 @@
+{
+  "_from": "git+https://github.com/carardiles/NewDPPlugin.git",
+  "_id": "newdpplugin@0.0.1",
+  "_inBundle": false,
+  "_location": "/newdpplugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/carardiles/NewDPPlugin",
+    "rawSpec": "https://github.com/carardiles/NewDPPlugin",
+    "saveSpec": "git+https://github.com/carardiles/NewDPPlugin.git",
+    "fetchSpec": "https://github.com/carardiles/NewDPPlugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/carardiles/NewDPPlugin.git#83f98e82343c85fbd1de0be31258a46b28eaab53",
+  "_spec": "https://github.com/carardiles/NewDPPlugin",
+  "_where": "C:\\Users\\cardiles\\Desktop\\Cordova Projects\\testApp4",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/rcanalesz/NewDPPlugin/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "intentplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Plugin to start Digital Persona fingerprint reader",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "homepage": "https://github.com/rcanalesz/NewDPPlugin",
+  "keywords": [
+    "Toast"
+  ],
+  "license": "ISC",
+  "name": "intentplugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcanalesz/NewDPPlugin.git"
+  },
+  "version": "0.0.1"
+}

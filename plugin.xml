@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cl-entel-plugins-huellero" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <name>NewDPPlugin</name>
+
+  <js-module name="NewDPPlugin" src="www/NewDPPlugin.js">
+    <clobbers target="NewDPPlugin" />
+  </js-module>
+
+  <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+
+  <platform name="android">
+
+    <config-file target="config.xml" parent="/*">
+      <feature name="NewDPPlugin">
+        <param name="android-package" value="cl.entel.plugins.NewDPPlugin.NewDPPlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity android:label="New DP Activity" android:name="cl.entel.plugins.NewDPPlugin.NewDPActivity"></activity>
+    </config-file>
+
+    <source-file src="src/android/NewDPPlugin.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
+    <source-file src="src/android/NewDPActivity.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
+    <source-file src="src/android/activity_new.xml" target-dir="res/layout"/>
+
+
+    <framework src="src/android/file.gradle" custom="true" type="gradleReference" />
+    
+    <resource-file src="libs/dpuareu.jar" target="libs/dpuareu.jar"/>
+  
+  </platform>
+</plugin>

@@ -1,0 +1,24 @@
+repositories{    
+  google()
+  jcenter()
+  flatDir {
+      dirs 'src/main/libs'
+   }
+   
+  flatDir {
+    dirs 'libs'
+  }
+}
+
+
+dependencies {
+   implementation(name:'zymorpholib_v1-release', ext:'aar')
+}
+
+
+android {
+  packagingOptions {
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/LICENSE'
+  }
+}
