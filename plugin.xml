@@ -20,4 +20,14 @@
         <source-file src="src/android/NewDPPlugin.java" target-dir="src/cl/entel/plugins/NewDPPlugin" />
     </platform>
 
+    <lib-file src="src/android/libs/dpuareu.jar"/>
+    <resource-file src="src/android/libs/armeabi/libdpfj.so"          target="jniLibs/armeabi/libdpfj.so" />
+    <resource-file src="src/android/libs/armeabi/libdpfpdd_tcd58.so"  target="jniLibs/armeabi/libdpfpdd_tcd58.so" />
+    <resource-file src="src/android/libs/armeabi/libdpfpdd.so"        target="jniLibs/armeabi/libdpfpdd.so" />
+    <resource-file src="src/android/libs/armeabi/libdpfpdd5000.so"    target="jniLibs/armeabi/libdpfpdd5000.so" />
+    <resource-file src="src/android/libs/armeabi/libdpfr6.so"         target="jniLibs/armeabi/libdpfr6.so" />
+    <resource-file src="src/android/libs/armeabi/libdpfr7.so"         target="jniLibs/armeabi/libdpfr7.so" />
+    <resource-file src="src/android/libs/armeabi/libdpuareu_jni.so"   target="jniLibs/armeabi/libdpuareu_jni.so" />
+    <resource-file src="src/android/libs/armeabi/libdpuvc.so"         target="jniLibs/armeabi/libdpuvc.so" />
+
 </plugin>
