@@ -1,94 +1,37 @@
-package cl.entel.plugins.NewDPPlugin;
+package com.percolatestudio.cordova.empty;
 
-// Cordova-required packages
+import org.apache.cordova.Config;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.PluginResult;
-import org.json.JSONArray;
 
-import android.graphics.Bitmap;
-import android.util.Log;
-import android.app.Activity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.content.Context;
-import android.content.Intent;
-
-import java.io.ByteArrayOutputStream;
-import android.util.Base64;
+import android.util.Log;
 
 public class NewDPPlugin extends CordovaPlugin {
 
-    private static final String TAG = "NEWDPPLUGIN";
-
-    private CallbackContext callbackContext = null;
-    
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-        super.initialize(cordova, webView);
-    }
+    protected static final String LOG_TAG = "NewDPPlugin";
 
     @Override
-    public boolean execute(String action, JSONArray args, final CallbackContext newCallbackContext) {
-        Log.i(TAG, "execute");
-
-        Context context = cordova.getActivity().getApplicationContext();
-        if ("contectar".equals(action)) {
-            Log.i(TAG, "contectar Action");
-
-            callbackContext = newCallbackContext;
-            cordova.setActivityResultCallback(this);
-
-            Intent intent = new Intent(context, NewActivity.class);
-            intent.putExtra("action",action);
-            this.cordova.getActivity().startActivityForResult(intent, 1);
-
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("conectar")) {
+            metodoDummy();
+            callbackContext.success();
             return true;
         }
-        else if("capturar".equals(action)){
-            Log.i(TAG, "capturar Action");
-            
-            callbackContext = newCallbackContext;
-            cordova.setActivityResultCallback(this);
-
-            Intent intent = new Intent(context, NewActivity.class);
-            intent.putExtra("action",action);
-            this.cordova.getActivity().startActivityForResult(intent, 1);
-
+        else if(action.equals("capturar")){
+            metodoDummy();
+            callbackContext.success();
             return true;
         }
-        callbackContext.error("No existe metodo: " + action);
-        Log.i(TAG, "error");
         return false;
     }
 
-    @Override
-    public  void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        Log.i(TAG, "Activity Result");
-
-        if (requestCode == 1) {
-            if(resultCode == Activity.RESULT_OK){
-
-                Log.i(TAG, "Activity Result OK");
-               
-                String msg = "OK";
-                
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.OK, msg);
-                pluginResult.setKeepCallback(true);
-                callbackContext.sendPluginResult(pluginResult);
-
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-
-                Log.i(TAG, "Activity Result FAILED");
-
-                String msg = "NOK";
-
-                PluginResult pluginResult = new PluginResult(PluginResult.Status.ERROR, msg);
-                callbackContext.sendPluginResult(pluginResult);
-            }
-        }
+    protected void metodoDummy() {
+        Log.d(LOG_TAG, "NewDPPlugin");
     }
-
 }
